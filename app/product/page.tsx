@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { ProductDetail } from "../_lib/data";
 import Link from "next/link";
 import ProductCard from "../components/productCard";
-export default function ProductList({id,title,image,description,price,category}:ProductDetail){
+export default function ProductList(){
   const [product , setproduct] = useState<ProductDetail[]>([])
   useEffect(()=>{
     const ProductDetails = async()=>{

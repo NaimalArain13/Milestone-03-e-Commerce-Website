@@ -5,7 +5,7 @@ export default function ProductId({ params }: { params: { productid: string } })
   const [productId , setProductId] = useState<ProductDetail[] | null>(null)
 useEffect(()=>{
   const ProductId = async ()=>{
-    const res = await fetch("http://localhost:3000/api")
+    const res = await fetch("/api")
     const data = await res.json()
     setProductId(data)
   }

@@ -20,7 +20,7 @@ export default function ProductList({id,title,image,description,price,category}:
     <div className="grid grid-cols sm:grid-cols-2 md:grid-cols-3">
       {product.map((p)=>(
         
-        <ProductCard
+        <ProductCard key={p.id}
         id={p.id}
         title={p.title} 
         description={p.description} 

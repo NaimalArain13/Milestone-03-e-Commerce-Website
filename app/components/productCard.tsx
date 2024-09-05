@@ -14,6 +14,10 @@ function ProductCard({ title, description, id,image,price }:CardProps){
   
   return (
     <div className="p-6 border border-[#f8f5f4] rounded-lg shadow-sm hover:shadow-2xl transition-shadow duration-300 flex flex-col ">
+      <Link
+          href={`/product/${id}`} // Link to the dynamic blog post
+          className="block  text-[#6e5a53] text-center py-2 px-4 rounded-2xl shadow-md hover:text-gray-950 transition-colors"
+        >
       {image && (
         <div className="mb-4 flex-shrink-0 shadow-2xl">
           <Image
@@ -30,13 +34,11 @@ function ProductCard({ title, description, id,image,price }:CardProps){
         <p className="m-2 text-gray-800">${price}</p>
       </div>
       <div className="mt-4">
-        <Link
-          href={`/product/${id}`} // Link to the dynamic blog post
-          className="block  text-[#6e5a53] text-center py-2 px-4 rounded-2xl shadow-md hover:text-gray-950 transition-colors"
-        >
+        
           view product
-        </Link>
+        
       </div>
+      </Link>
     </div>
   );
 };

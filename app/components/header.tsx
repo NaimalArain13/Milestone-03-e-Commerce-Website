@@ -11,11 +11,11 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <nav className="bg-black top-0 z-10 sticky p-4 flex justify-between items-center shadow-2xl rounded-full">
+    <nav className="bg-bg/50 md:bg-black top-0 z-10 sticky mt-0 px-2 md:p-4 flex justify-between items-center shadow-2xl">
       {/* Shopping Cart Icon */}
       <div className="flex-none w-14">
         <Link href="/cart">
-          <FaShoppingCart className="text-amber-200 text-2xl hover:text-cyan-600" />
+          <FaShoppingCart className="text-blue-700 text-2xl hover:text-cyan-600" />
         </Link>
       </div>
 
@@ -60,7 +60,7 @@ export default function Navbar() {
         <button
           onClick={() => setIsOpen(!isOpen)}
           aria-label="toggle menu"
-          className="text-amber-200 md:hidden"
+          className="text-blue-700 md:hidden"
         >
           {isOpen ? <FiX size={24} /> : <MdMenuBook size={24} />}
         </button>
@@ -68,7 +68,7 @@ export default function Navbar() {
 
       {/* Mobile Navigation Links */}
       {isOpen && (
-        <div className="absolute top-16 left-0 right-0 bg-zinc-950/90 flex justify-center text-center">
+        <div className="fixed top-16 left-0 right-0 bg-zinc-950/50 flex justify-center text-center">
           <ul className="flex flex-col items-center space-y-4 py-4">
             <Link
               href="/"

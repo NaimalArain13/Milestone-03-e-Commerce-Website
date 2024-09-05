@@ -19,7 +19,7 @@ export default function ContactCard() {
         </h1>
         <p className="text-gray-500 mt-11">
           At TechBookStore, we offer a wide range of tech-related books for all
-          skill levels. Whether you're a beginner looking to learn the basics or
+          skill levels. Whether you&#39;re a beginner looking to learn the basics or
           a professional seeking advanced knowledge, we have the right book for
           you.
         </p>
@@ -31,47 +31,54 @@ export default function ContactCard() {
 
       {/* Form Section */}
       <div className="flex-1 bg-white p-8 shadow-2xl rounded-sm w-auto max-w-md">
-        
+  {/* Name */}
+  <div className="mb-4">
+    <label className="block mb-2 text-gray-700">Full Name</label>
+    <input
+      type="text"
+      placeholder="Enter your full name"
+      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+    />
+  </div>
 
-        <div className="mb-4">
-          Username
-          <input
-            type="text"
-            placeholder="Enter your username"
-            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-        </div>
-        <div className="mb-4">
-          Password
-          <input
-            type="password"
-            placeholder="Enter your password"
-            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-        </div>
+  {/* Email */}
+  <div className="mb-4">
+    <label className="block mb-2 text-gray-700">Email</label>
+    <input
+      type="email"
+      placeholder="Enter your email"
+      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+    />
+  </div>
 
-        <div className="mb-6 flex items-center">
-          <input type="checkbox" className="text-blue-600 focus:ring-0" />
-          <label className="ml-2 text-gray-700">Remember me</label>
-        </div>
-        <Link href={"/"}>
-          <button className="bg-blue-600 text-white py-2 px-3 rounded-md hover:bg-blue-700 transition">
-            Sign in
-          </button>
-        </Link>
-        <p className="mt-4 text-sm text-gray-500">
-          <a href="#" className="hover:underline">
-            Forgot password?
-          </a>
-        </p>
-        <p className="mt-6 text-sm text-gray-800">
-          Don't have an account?{" "}
-          <a href="#" className="text-cyan-500 hover:underline">
-            Register here
-          </a>
-        </p>
-      </div>
-    </div></div>
+  {/* Subject */}
+  <div className="mb-4">
+    <label className="block mb-2 text-gray-700">Subject</label>
+    <input
+      type="text"
+      placeholder="Subject"
+      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+    />
+  </div>
+
+  {/* Message */}
+  <div className="mb-4">
+    <label className="block mb-2 text-gray-700">Message</label>
+    <textarea
+      placeholder="Write your message here"
+      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+      rows={4}
+    ></textarea>
+  </div>
+
+  {/* Submit Button */}
+  <button className="bg-blue-600 text-white py-2 px-3 rounded-md hover:bg-blue-700 transition">
+    Submit
+  </button>
+</div>
+
+    </div>
+    </div>
     
     </div>
   

@@ -1,8 +1,7 @@
 "use client";
 import { useEffect, useState } from "react"
 import SingleProductCard from "@/app/components/singleProductCard";
-import {Books} from "../../_lib/data"
-import NotFound from "@/app/not-found";
+import {Books} from "@/app/_lib/data"
 
 interface Cart extends Books {
   quantity: number;  // Make quantity optional
@@ -26,7 +25,9 @@ if (matchId && !matchId.quantity) {
 }
 if(!matchId){
   return(
-    <div><NotFound children={undefined} /></div>
+    <div className="min-h-screen flex justify-center items-center bg-blue-800/10 text-4xl md:text-5xl">
+      <h2 className="hover:shadow-2xl bg-black/50 rounded-full px-3 p-1">Product Not Found </h2>
+      </div>
   )
 }
 return(

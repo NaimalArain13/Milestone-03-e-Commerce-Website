@@ -8,7 +8,7 @@ import Popup from "./popup";
 import { useState } from "react";
 
 export default function SingleProductCard({ product }: { product: Cart }) {
-  const { addToCart } = useCart(); // Use the addToCart function from the cart context
+  const { addToCart } = useCart(); 
   const [isPopUpVisible , setIsPopUpVisible] = useState(false)
   const handleCart = ()=>{
     addToCart(product)

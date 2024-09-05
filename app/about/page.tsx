@@ -1,5 +1,5 @@
 import Link from "next/link";
-
+import Image from "next/image";
 export default function About(){
     return(
        <>
@@ -14,18 +14,21 @@ export default function About(){
 <section className="bg-bg py-12 px-8">
   <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
     <div>
-      <img src="/icons/innovation.png" alt="Innovation Icon" className="mx-auto mb-4"/>
+      <Image src="/images/abt1.jpg" alt="Innovation Image" 
+      width={100} height={100} className="mx-auto mb-4 rounded-full"/>
       <h3 className="text-2xl font-bold text-gray-800">Innovation</h3>
       <p className="text-gray-600">We bring the latest tech insights to your doorstep.</p>
     </div>
     <div>
-      <img src="/icons/quality.png" alt="Quality Icon" className="mx-auto mb-4"/>
+      <Image src="/images/abt3.jpg" alt="Quality Image"
+      width={100} height={100} className="mx-auto mb-4 rounded-lg"/>
       
       <h3 className="text-2xl font-bold text-gray-800">Quality</h3>
       <p className="text-gray-600">Our books are carefully selected for their high quality and relevance.</p>
     </div>
     <div>
-      <img src="/icons/community.png" alt="Community Icon" className="mx-auto mb-4"/>
+      <Image src="/images/abt2.jpg" alt="Community Image" 
+      width={100} height={100} className="mx-auto mb-4 rounded-full"/>
       <h3 className="text-2xl font-bold text-gray-800">Community</h3>
       <p className="text-gray-600">We support a global community of tech enthusiasts and learners.</p>
     </div>

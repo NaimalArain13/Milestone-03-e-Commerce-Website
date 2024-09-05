@@ -137,11 +137,19 @@ body {
   }
 }
 
-@layer base {
+/* @layer base {
   * {
     @apply border-border;
   }
   body {
     @apply bg-background text-foreground;
   }
+
+   
+}*/
+
+.hero-section-bg {
+  background-image: url('/images/hs1.jpg');
+  background-size: cover;
+  background-position: center;
 }

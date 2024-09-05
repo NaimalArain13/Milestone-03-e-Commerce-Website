@@ -14,6 +14,7 @@ interface Cart extends Books {
 interface cartContextType {
   cart: Cart[];
   addToCart: (product: Cart) => void;
+  clearCart: ()=>void;
   removeOneFromCart: (id: number) => void;
   incrementQuantity: (id: number) => void;
   decrementQuantity: (id: number) => void;
@@ -27,6 +28,7 @@ const cartContext = createContext<cartContextType | null>(null);
 
 function CartProvider({ children }: CartProviderProps) {
   const [cart, setCart] = useState<Cart[]>([]);
+  const [totalamount , setTotalAmount] = useState<number>(0)
 
   useEffect(() => {
     const storedCart = localStorage.getItem("cart");
@@ -70,10 +72,6 @@ function CartProvider({ children }: CartProviderProps) {
       // if (existingItem?.quantity === 1) {
         return prevItem.filter((item) => item.id !== id);
       }
-      // return prevItem.map((item) =>
-      //   item.id === id ? { ...item, quantity: item.quantity - 1 } : item
-      // );
-    // }
   );
   };
 
@@ -98,6 +96,12 @@ function CartProvider({ children }: CartProviderProps) {
       );
     });
   };
+
+  //clear the cart after order Done
+  const clearCart = ()=>{
+    setCart([]);
+    setTotalAmount(0)
+  }
   return (
     <cartContext.Provider
       value={{
@@ -107,6 +111,7 @@ function CartProvider({ children }: CartProviderProps) {
         removeOneFromCart,
         incrementQuantity,
         decrementQuantity,
+        clearCart
       }}
     >
       {children}

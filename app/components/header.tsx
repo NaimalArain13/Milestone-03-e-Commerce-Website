@@ -11,7 +11,7 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <nav className="bg-bg/50 md:bg-black top-0 z-10 sticky mt-0 px-2 md:p-4 flex justify-between items-center shadow-2xl">
+    <nav className="bg-bg/50 md:bg-black top-0 z-10 sticky mt-0 p-4 flex justify-between items-center shadow-2xl">
       {/* Shopping Cart Icon */}
       <div className="flex-none w-14">
         <Link href="/cart">

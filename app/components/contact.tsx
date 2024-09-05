@@ -1,7 +1,71 @@
-import Link from "next/link";
-import React from "react";
+"use client";
+import React, { useState, FormEvent , ChangeEvent} from "react";
 
+interface FormType {
+  fullName:string,
+  email:string,
+  subject:string,
+  message:string
+}
+interface ErrorType {
+  fullName:string,
+  email:string,
+  subject:string,
+  message:string
+}
 export default function ContactCard() {
+  const [formData , setFormData] = useState<FormType>({fullName:"",email:"",subject:"",message:""})
+  const [error , setError] = useState<ErrorType>({fullName:"",email:"",subject:"",message:""})
+
+  //form logic
+  const validateForm = ()=>{
+    let formErrors:FormType = {
+      fullName: "",
+      email: "",
+      subject: "",
+      message: ""
+    }
+    if(!formData.fullName){
+      formErrors.fullName = "Full name is required";
+    }
+    if(!formData.email){
+      formErrors.email = "Email is required";
+    }else if(!/\S+@\S+\.\S+/.test(formData.email)){
+      formErrors.email = "Email address is required";
+    }
+
+    if(!formData.subject){
+      formErrors.subject = "subject is required";
+    }
+
+    if(!formData.message){
+      formErrors.message = "Message is required";
+    }
+
+    return formErrors;
+  }
+
+  //handle for Submission
+  const handleSubmit = (e:FormEvent<HTMLFormElement>)=>{
+    e.preventDefault()
+    const validationErrors = validateForm()
+    setError(validationErrors)
+    //if no errors
+    if(Object.keys(validationErrors).length === 0){
+      console.log("Form Submitted Succesfully", formData)
+
+      //clear form after submission
+      setFormData({fullName:"",email:"",subject:"",message:""})
+    }
+  }
+
+  //handle Change
+  const handleChange = (e:ChangeEvent<HTMLInputElement>)=>{
+    setFormData({
+      ...formData, [e.target.name]: e.target.value
+    })
+  }
+
   return (
     <div>
       <section className="bg-bg py-16 px-8">
@@ -33,12 +97,15 @@ export default function ContactCard() {
           </div>
 
           {/* Form Section */}
-          <div className="flex-1 bg-white p-8 shadow-2xl rounded-sm w-auto max-w-md">
+          <form onSubmit={handleSubmit} className="flex-1 bg-white p-8 shadow-2xl rounded-sm w-auto max-w-md">
             {/* Name */}
             <div className="mb-4">
               <label className="block mb-2 text-gray-700">Full Name</label>
               <input
                 type="text"
+                name="fullName"
+                value={formData.fullName}
+                onChange={handleChange}
                 placeholder="Enter your full name"
                 className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
@@ -49,6 +116,9 @@ export default function ContactCard() {
               <label className="block mb-2 text-gray-700">Email</label>
               <input
                 type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
                 placeholder="Enter your email"
                 className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
@@ -59,6 +129,9 @@ export default function ContactCard() {
               <label className="block mb-2 text-gray-700">Subject</label>
               <input
                 type="text"
+                name="subject"
+                value={formData.subject}
+                onChange={handleChange}
                 placeholder="Subject"
                 className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
@@ -68,17 +141,21 @@ export default function ContactCard() {
             <div className="mb-4">
               <label className="block mb-2 text-gray-700">Message</label>
               <textarea
+                name="message"
+                value={formData.message}
+                onChange={(e:ChangeEvent<HTMLTextAreaElement>)=>setFormData({...formData , [e.target.name]:e.target.value})}
                 placeholder="Write your message here"
                 className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                 rows={4}
               ></textarea>
+              {error.message && <p className="text-red-500 text-sm">{error.message}</p>}
             </div>
 
             {/* Submit Button */}
             <button className="bg-blue-600 text-white py-2 px-3 rounded-md hover:bg-blue-700 transition">
               Submit
             </button>
-          </div>
+          </form>
         </div>
       </div>
     </div>

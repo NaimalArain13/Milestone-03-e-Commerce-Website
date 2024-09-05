@@ -15,7 +15,7 @@ export default function Navbar() {
       {/* Shopping Cart Icon */}
       <div className="flex-none w-14">
         <Link href="/cart">
-          <FaShoppingCart className="text-blue-700 text-2xl hover:text-cyan-600" />
+          <FaShoppingCart className="text-black md:text-amber-200 text-2xl hover:text-cyan-600" />
         </Link>
       </div>
 
@@ -24,7 +24,7 @@ export default function Navbar() {
         <Link
           href="/"
           className={`text-amber-200 text-lg ${
-            pathname === "/" ? "text-cyan-500 bg-white px-1 rounded-full" : ""
+            pathname === "/" ? "text-black bg-white px-1 rounded-full" : ""
           } hover:text-cyan-600`}
         >
           Home
@@ -32,7 +32,7 @@ export default function Navbar() {
         <Link
           href="/contact"
           className={`text-amber-200 text-lg ${
-            pathname === "/contact" ? "text-cyan-500 bg-white px-1 rounded-full" : ""
+            pathname === "/contact" ? "text-black bg-white px-1 rounded-full" : ""
           } hover:text-cyan-600`}
         >
           Contact
@@ -40,7 +40,7 @@ export default function Navbar() {
         <Link
           href="/product"
           className={`text-amber-200 text-lg ${
-            pathname === "/product" ? "text-cyan-500 bg-white px-1 rounded-full" : ""
+            pathname === "/product" ? "text-black bg-white px-1 rounded-full" : ""
           } hover:text-cyan-600`}
         >
           Shop
@@ -48,7 +48,7 @@ export default function Navbar() {
         <Link
           href="/about"
           className={`text-amber-200 text-lg ${
-            pathname === "/about" ? "text-cyan-500 bg-white px-1 rounded-full" : ""
+            pathname === "/about" ? "text-black bg-white px-1 rounded-full" : ""
           } hover:text-cyan-600`}
         >
           About
@@ -60,7 +60,7 @@ export default function Navbar() {
         <button
           onClick={() => setIsOpen(!isOpen)}
           aria-label="toggle menu"
-          className="text-blue-700 md:hidden"
+          className="text-black hover:text-cyan-700 md:hidden"
         >
           {isOpen ? <FiX size={24} /> : <MdMenuBook size={24} />}
         </button>
@@ -73,7 +73,7 @@ export default function Navbar() {
             <Link
               href="/"
               className={`text-amber-200 text-lg ${
-                pathname === "/" ? "text-cyan-500" : ""
+                pathname === "/" ? "text-black" : ""
               } hover:text-cyan-600 transition-colors`}
             >
               Home
@@ -81,7 +81,7 @@ export default function Navbar() {
             <Link
               href="/contact"
               className={`text-amber-200 text-lg ${
-                pathname === "/contact" ? "text-cyan-500" : ""
+                pathname === "/contact" ? "text-black" : ""
               } hover:text-cyan-600 transition-colors`}
             >
               Contact
@@ -89,7 +89,7 @@ export default function Navbar() {
             <Link
               href="/about"
               className={`text-amber-200 text-lg ${
-                pathname === "/about" ? "text-cyan-500" : ""
+                pathname === "/about" ? "text-black" : ""
               } hover:text-cyan-600 transition-colors`}
             >
               About
@@ -97,7 +97,7 @@ export default function Navbar() {
             <Link
               href="/product"
               className={`text-amber-200 text-lg ${
-                pathname === "/shop" ? "text-cyan-500" : ""
+                pathname === "/shop" ? "text-black" : ""
               } hover:text-cyan-600 transition-colors`}
             >
               Shop

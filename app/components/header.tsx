@@ -62,7 +62,7 @@ export default function Navbar() {
           aria-label="toggle menu"
           className="text-black hover:text-cyan-700 md:hidden"
         >
-          {isOpen ? <FiX size={24} /> : <MdMenuBook size={24} />}
+          {isOpen ? <FiX size={28} /> : <MdMenuBook size={28} />}
         </button>
       </div>
 

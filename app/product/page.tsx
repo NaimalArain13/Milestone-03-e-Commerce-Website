@@ -10,7 +10,7 @@ export default function ProductList() {
       const res = await fetch("/api");
       const data = await res.json();
       setproduct(data);
-      console.log(data); //check if the data is successfully fetched
+      console.log(data); //check if the data is successfully fetched...
     };
     ProductDetails();
   }, []);
@@ -19,7 +19,7 @@ export default function ProductList() {
       <section className="bg-bg py-16 px-8">
         <h1 className="text-4xl font-bold text-gray-800 text-center">Shop</h1>
       </section>
-      <div className="grid grid-cols-2 bg-bg sm:grid-cols-3 sm:gap-y-4 md:grid-cols-4 md:gap-y-4">
+      <div className="grid grid-cols-2 h-full bg-bg sm:grid-cols-3 sm:gap-y-4 md:grid-cols-4 md:gap-y-4">
         {product.map((p) => (
           <ProductCard
             key={p.id}
